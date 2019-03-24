@@ -24,6 +24,14 @@ public class Flaten {
     }
 
     public List<Integer> transformToUnrepeatedOneDimesional() {
-        throw new NotImplementedException();
+        List<Integer> result = new ArrayList<>();
+        for (Integer[] arr : array) {
+            for (Integer num : arr) {
+                if (!result.contains(num)) {
+                    result.add(num);
+                }
+            }
+        }
+        return result;
     }
 }
