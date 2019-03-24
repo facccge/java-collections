@@ -109,21 +109,6 @@ public class Reduce {
     }
 
     public Double getMedianInLinkList(SingleLink singleLink) {
-        List<Integer> list = new ArrayList<>();
-        list.addAll(this.arrayList);
-        for (int i = 0; i < list.size(); i++) {
-            for (int j = i + 1; j < list.size(); j++) {
-                int num1 = list.get(i);
-                int num2 = list.get(j);
-                if (num1 > num2) {
-                    list.set(i, num2);
-                    list.set(j, num1);
-                }
-            }
-        }
-        for (int num : list) {
-            singleLink.addTailPointer(num);
-        }
         double result = 0;
         int size = arrayList.size();
         if (size % 2 == 0) {
@@ -131,7 +116,8 @@ public class Reduce {
             int num2 = (int) singleLink.getNode(size / 2);
             result = (num1 + num2) / 2.0;
         } else {
-            result = (double) singleLink.getNode(size / 2 + 1);
+            int num = (int) singleLink.getNode(size / 2 + 1);
+            result = (double) num;
         }
         return result;
     }
