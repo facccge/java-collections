@@ -14,7 +14,7 @@ public class Reduce {
 
     public int getMaximum() {
         int result = 0;
-        for(int num:arrayList){
+        for (int num : arrayList) {
             if (num > result) {
                 result = num;
             }
@@ -23,7 +23,13 @@ public class Reduce {
     }
 
     public double getMinimum() {
-        throw new NotImplementedException();
+        int result = Integer.MAX_VALUE;
+        for (int num : arrayList) {
+            if (num < result) {
+                result = num;
+            }
+        }
+        return result;
     }
 
     public double getAverage() {
