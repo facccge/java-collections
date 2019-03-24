@@ -19,14 +19,19 @@ public class MyMap {
 
     public List<Integer> getTriple() {
         List<Integer> result = new ArrayList<>();
-        for(int num:array){
+        for (int num : array) {
             result.add(num * 3);
         }
         return result;
     }
 
-    public List<String> mapLetter() {
-        throw new NotImplementedException();
+public List<String> mapLetter() {
+        List<String> result = new ArrayList<>();
+        for (int num : array) {
+            char letter = (char) (num + 96);
+            result.add(letter + "");
+        }
+        return result;
     }
 
     public List<String> mapLetters() {
