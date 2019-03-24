@@ -137,7 +137,42 @@ public class Add {
     }
 
     public List<Integer> sortByEvenAndOdd(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        List<Integer> result = new ArrayList<>();
+        List<Integer> evenlist = new LinkedList<>();
+        for (int num : arrayList) {
+            if (num % 2 == 0) {
+                evenlist.add(num);
+            }
+        }
+        for (int i = 0; i < evenlist.size(); i++) {
+            for (int j = i + 1; j < evenlist.size(); j++) {
+                int a = evenlist.get(i);
+                int b = evenlist.get(j);
+                if (a > b) {
+                    evenlist.set(j, a);
+                    evenlist.set(i, b);
+                }
+            }
+        }
+        List<Integer> oddlist = new LinkedList<>();
+        for (int num : arrayList) {
+            if (num % 2 == 1) {
+                oddlist.add(num);
+            }
+        }
+        for (int i = 0; i < oddlist.size(); i++) {
+            for (int j = i + 1; j < oddlist.size(); j++) {
+                int a = oddlist.get(i);
+                int b = oddlist.get(j);
+                if (a < b) {
+                    oddlist.set(j, a);
+                    oddlist.set(i, b);
+                }
+            }
+        }
+        evenlist.addAll(oddlist);
+        result = evenlist;
+        return result;
     }
 
     public List<Integer> getProcessedList(List<Integer> arrayList) {
