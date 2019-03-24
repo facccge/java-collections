@@ -77,7 +77,7 @@ public class Reduce {
 
     public int getFirstEven() {
         for (int num : arrayList) {
-            if(num%2==0){
+            if (num % 2 == 0) {
                 return num;
             }
         }
@@ -85,8 +85,8 @@ public class Reduce {
     }
 
     public int getIndexOfFirstEven() {
-        for (int i=0;i<arrayList.size();i++) {
-            if(arrayList.get(i)%2==0){
+        for (int i = 0; i < arrayList.size(); i++) {
+            if (arrayList.get(i) % 2 == 0) {
                 return i;
             }
         }
@@ -94,26 +94,55 @@ public class Reduce {
     }
 
     public boolean isEqual(List<Integer> arrayList) {
-        if(this.arrayList.size()==arrayList.size()){
+        if (this.arrayList.size() == arrayList.size()) {
             boolean isEqual = true;
-            for(int i=0;i<this.arrayList.size();i++){
-                if(this.arrayList.get(i)!=arrayList.get(i)){
-                    isEqual=false;
+            for (int i = 0; i < this.arrayList.size(); i++) {
+                if (this.arrayList.get(i) != arrayList.get(i)) {
+                    isEqual = false;
                     break;
                 }
             }
             return isEqual;
-        }else{
+        } else {
             return false;
         }
     }
 
     public Double getMedianInLinkList(SingleLink singleLink) {
-        throw new NotImplementedException();
+        List<Integer> list = new ArrayList<>();
+        list.addAll(this.arrayList);
+        for (int i = 0; i < list.size(); i++) {
+            for (int j = i + 1; j < list.size(); j++) {
+                int num1 = list.get(i);
+                int num2 = list.get(j);
+                if (num1 > num2) {
+                    list.set(i, num2);
+                    list.set(j, num1);
+                }
+            }
+        }
+        for (int num : list) {
+            singleLink.addTailPointer(num);
+        }
+        double result = 0;
+        int size = arrayList.size();
+        if (size % 2 == 0) {
+            int num1 = (int) singleLink.getNode(size / 2 + 1);
+            int num2 = (int) singleLink.getNode(size / 2);
+            result = (num1 + num2) / 2.0;
+        } else {
+            result = (double) singleLink.getNode(size / 2 + 1);
+        }
+        return result;
     }
 
     public int getLastOdd() {
-        throw new NotImplementedException();
+        for (int i = arrayList.size()-1; i>=0; i--) {
+            if (arrayList.get(i) % 2 == 1) {
+                return arrayList.get(i);
+            }
+        }
+        return 0;
     }
 
     public int getIndexOfLastOdd() {
