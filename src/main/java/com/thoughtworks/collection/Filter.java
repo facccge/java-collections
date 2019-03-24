@@ -8,16 +8,16 @@ import java.util.Map;
 
 public class Filter {
 
-    List<Integer>  array;
+    List<Integer> array;
 
     public Filter(List<Integer> array) {
-     this.array = array;
+        this.array = array;
     }
 
     public List<Integer> filterEven() {
         List<Integer> result = new ArrayList<>();
-        for(int num:array){
-            if(num%2==0){
+        for (int num : array) {
+            if (num % 2 == 0) {
                 result.add(num);
             }
         }
@@ -26,8 +26,8 @@ public class Filter {
 
     public List<Integer> filterMultipleOfThree() {
         List<Integer> result = new ArrayList<>();
-        for(int num:array){
-            if(num%3==0){
+        for (int num : array) {
+            if (num % 3 == 0) {
                 result.add(num);
             }
         }
@@ -36,9 +36,9 @@ public class Filter {
 
     public List<Integer> getCommonElements(List<Integer> firstList, List<Integer> secondList) {
         List<Integer> result = new ArrayList<>();
-        for(int firstNum:firstList){
-            for(int secondNum:secondList){
-                if(firstNum==secondNum){
+        for (int firstNum : firstList) {
+            for (int secondNum : secondList) {
+                if (firstNum == secondNum) {
                     result.add(firstNum);
                 }
             }
@@ -47,6 +47,12 @@ public class Filter {
     }
 
     public List<Integer> getDifferentElements() {
-        throw new NotImplementedException();
+        List<Integer> result = new ArrayList<>();
+        for (int num : array) {
+            if (!result.contains(num)) {
+                result.add(num);
+            }
+        }
+        return result;
     }
 }
