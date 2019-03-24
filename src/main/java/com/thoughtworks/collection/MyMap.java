@@ -52,7 +52,21 @@ public class MyMap {
     }
 
     public List<Integer> sortFromBig() {
-        throw new NotImplementedException();
+        List<Integer> result = new ArrayList<>();
+        for (int num : array) {
+            result.add(num);
+        }
+        for (int i = 0; i < result.size(); i++) {
+            for (int j = i + 1; j < result.size(); j++) {
+                int current = result.get(i);
+                int next = result.get(j);
+                if (current < next) {
+                    result.set(j, current);
+                    result.set(i, next);
+                }
+            }
+        }
+        return result;
     }
 
     public List<Integer> sortFromSmall() {
