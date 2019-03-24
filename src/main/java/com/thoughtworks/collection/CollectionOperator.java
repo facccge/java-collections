@@ -39,7 +39,13 @@ public class CollectionOperator {
     }
 
     public List<Integer> popEvenElments(int[] array) {
-        throw new NotImplementedException();
+        List<Integer> result = new ArrayList<>();
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] % 2 == 0) {
+                result.add(array[i]);
+            }
+        }
+        return result;
     }
 
     public int popLastElment(int[] array) {
