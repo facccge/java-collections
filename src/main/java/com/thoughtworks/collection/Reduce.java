@@ -76,7 +76,12 @@ public class Reduce {
     }
 
     public int getFirstEven() {
-        throw new NotImplementedException();
+        for (int num : arrayList) {
+            if(num%2==0){
+                return num;
+            }
+        }
+        return 0;
     }
 
     public int getIndexOfFirstEven() {
