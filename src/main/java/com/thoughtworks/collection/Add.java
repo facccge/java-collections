@@ -96,7 +96,7 @@ public class Add {
 
     public double getAverageOfEven(List<Integer> arrayList) {
         double result = 0;
-        int sum = 0;
+        double sum = 0;
         int count = 0;
         for (int num : arrayList) {
             if (num % 2 == 0) {
