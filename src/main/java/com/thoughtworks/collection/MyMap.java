@@ -25,7 +25,7 @@ public class MyMap {
         return result;
     }
 
-public List<String> mapLetter() {
+    public List<String> mapLetter() {
         List<String> result = new ArrayList<>();
         for (int num : array) {
             char letter = (char) (num + 96);
@@ -35,7 +35,20 @@ public List<String> mapLetter() {
     }
 
     public List<String> mapLetters() {
-        throw new NotImplementedException();
+        List<String> result = new ArrayList<>();
+        for (int num : array) {
+            int nowNum = num - 1;
+            String letters = "";
+            while (nowNum / 26 > 0) {
+                char letter = (char) (nowNum / 26 + 96);
+                letters += letter;
+                nowNum -= nowNum / 26 * 26;
+            }
+            char letter = (char) (nowNum % 26 + 97);
+            letters += letter;
+            result.add(letters);
+        }
+        return result;
     }
 
     public List<Integer> sortFromBig() {
