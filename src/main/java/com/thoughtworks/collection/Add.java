@@ -176,6 +176,12 @@ public class Add {
     }
 
     public List<Integer> getProcessedList(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        List<Integer> result = new ArrayList<>();
+        for (int i = 0; i < arrayList.size() - 1; i++) {
+            int currentNum = arrayList.get(i);
+            int nextNum = arrayList.get(i + 1);
+            result.add((currentNum + nextNum) * 3);
+        }
+        return result;
     }
 }
