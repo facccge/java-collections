@@ -146,6 +146,11 @@ public class Reduce {
     }
 
     public int getIndexOfLastOdd() {
-        throw new NotImplementedException();
+        for (int i = arrayList.size()-1; i>=0; i--) {
+            if (arrayList.get(i) % 2 == 1) {
+                return i;
+            }
+        }
+        return 0;
     }
 }
