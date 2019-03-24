@@ -76,26 +76,36 @@ public class Add {
             }
         }
         int size = list.size();
-        for(int i = 0; i< size; i++){
-            for(int j = i+1; j< size; j++){
+        for (int i = 0; i < size; i++) {
+            for (int j = i + 1; j < size; j++) {
                 int a = list.get(i);
                 int b = list.get(j);
-                if(a > b){
+                if (a > b) {
                     list.set(j, a);
                     list.set(i, b);
                 }
             }
         }
-        if(size %2==0){
-            result = (list.get(size/2-1)+list.get(size/2))/2;
-        }else{
-            result = list.get(size/2);
+        if (size % 2 == 0) {
+            result = (list.get(size / 2 - 1) + list.get(size / 2)) / 2;
+        } else {
+            result = list.get(size / 2);
         }
         return result;
     }
 
     public double getAverageOfEven(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        double result = 0;
+        int sum = 0;
+        int count = 0;
+        for (int num : arrayList) {
+            if (num % 2 == 0) {
+                sum += num;
+                count+=1;
+            }
+        }
+        result = sum/count;
+        return result;
     }
 
     public boolean isIncludedInEvenIndex(List<Integer> arrayList, Integer specialElment) {
