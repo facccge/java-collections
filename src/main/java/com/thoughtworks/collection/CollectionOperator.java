@@ -8,12 +8,12 @@ import java.util.List;
 public class CollectionOperator {
     public List<Integer> getListByInterval(int left, int right) {
         List<Integer> result = new ArrayList<>();
-        if(left>right){
-            for(int i=left;i>=right;i--){
+        if (left > right) {
+            for (int i = left; i >= right; i--) {
                 result.add(i);
             }
-        }else{
-            for(int i=left;i<=right;i++){
+        } else {
+            for (int i = left; i <= right; i++) {
                 result.add(i);
             }
         }
@@ -21,7 +21,21 @@ public class CollectionOperator {
     }
 
     public List<Integer> getEvenListByIntervals(int left, int right) {
-        throw new NotImplementedException();
+        List<Integer> result = new ArrayList<>();
+        if (left > right) {
+            for (int i = left; i >= right; i--) {
+                if (i % 2 == 0) {
+                    result.add(i);
+                }
+            }
+        } else {
+            for (int i = left; i <= right; i++) {
+                if (i % 2 == 0) {
+                    result.add(i);
+                }
+            }
+        }
+        return result;
     }
 
     public List<Integer> popEvenElments(int[] array) {
