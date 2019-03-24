@@ -101,15 +101,27 @@ public class Add {
         for (int num : arrayList) {
             if (num % 2 == 0) {
                 sum += num;
-                count+=1;
+                count += 1;
             }
         }
-        result = sum/count;
+        result = sum / count;
         return result;
     }
 
     public boolean isIncludedInEvenIndex(List<Integer> arrayList, Integer specialElment) {
-        throw new NotImplementedException();
+        List<Integer> list = new LinkedList<>();
+        for (int num : arrayList) {
+            if (num % 2 == 0) {
+                list.add(num);
+            }
+        }
+        boolean result = false;
+        for (Integer num : list) {
+            if (specialElment.equals(num)) {
+                result = true;
+            }
+        }
+        return result;
     }
 
     public List<Integer> getUnrepeatedFromEvenIndex(List<Integer> arrayList) {
