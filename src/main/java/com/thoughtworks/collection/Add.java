@@ -3,6 +3,7 @@ package com.thoughtworks.collection;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Add {
@@ -67,7 +68,30 @@ public class Add {
     }
 
     public double getMedianOfEven(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        double result = 0;
+        List<Integer> list = new LinkedList<>();
+        for (int num : arrayList) {
+            if (num % 2 == 0) {
+                list.add(num);
+            }
+        }
+        int size = list.size();
+        for(int i = 0; i< size; i++){
+            for(int j = i+1; j< size; j++){
+                int a = list.get(i);
+                int b = list.get(j);
+                if(a > b){
+                    list.set(j, a);
+                    list.set(i, b);
+                }
+            }
+        }
+        if(size %2==0){
+            result = (list.get(size/2-1)+list.get(size/2))/2;
+        }else{
+            result = list.get(size/2);
+        }
+        return result;
     }
 
     public double getAverageOfEven(List<Integer> arrayList) {
