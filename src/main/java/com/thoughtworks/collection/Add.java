@@ -21,7 +21,18 @@ public class Add {
     }
 
     public int getSumOfOdds(int leftBorder, int rightBorder) {
-        throw new NotImplementedException();
+        int result=0;
+        if(leftBorder>rightBorder){
+            int temp = rightBorder;
+            rightBorder = leftBorder;
+            leftBorder = temp;
+        }
+        for(int i=leftBorder;i<=rightBorder;i++){
+            if(i%2==1){
+                result+=i;
+            }
+        }
+        return result;
     }
 
     public int getSumTripleAndAddTwo(List<Integer> arrayList) {
